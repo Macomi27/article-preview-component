@@ -23,17 +23,24 @@ body {
   background-color: hsl(var(--background-color));
 }
 
-.container {
+.component {
   width: 50%;
   margin-inline: auto;
   display: flex;
   align-items: center;
+  justify-content: center;
   border-radius: 1rem;
-  border: 1px solid blue;
+  margin-top: 15rem;
+  overflow: hidden;
 }
 
 img {
   width: var(--img-width);
+  display: block;
+  max-width: 250px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
 }
 
 .article-img {
@@ -41,17 +48,10 @@ img {
   box-sizing: border-box;
 }
 
-.article-img img {
-  border-bottom-left-radius: 1rem;
-  border-top-left-radius: 1rem;
-}
-
 .preview {
   box-sizing: border-box;
   margin: 0;
-  border-bottom-right-radius: 1rem;
-  border-top-right-radius: 1rem;
-  padding: 1.3rem 2rem;
+  padding: 1.5rem 2rem;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -106,16 +106,16 @@ h2 {
 }
 
 .share-info {
-  position: absolute;
-  /* display: none; */
+  display: none;
+  /* position: absolute;
   bottom: 5rem;
   right: -7rem;
   display: flex;
   align-items: center;
   gap: 1.2rem;
-  padding: 1rem 2rem;
+  padding: 1.2rem 2.2rem;
   border-radius: 0.7rem;
-  background-color: hsl(var(--h2-color));
+  background-color: hsl(var(--h2-color)); */
 }
 
 .share-info > p {
@@ -127,7 +127,7 @@ h2 {
 }
 
 .icon {
-  width: 1.5rem;
+  width: 1.7rem;
 }
 
 .share-icon {
@@ -138,8 +138,9 @@ h2 {
   cursor: pointer;
 }
 
-/* .share-icon:active .share-info {
-  position: absolute;
+.share-icon:hover .share-info {
+  display: block;
+  /* position: absolute;
   bottom: 0;
   right: -3rem;
   display: flex;
@@ -147,13 +148,50 @@ h2 {
   gap: 1.2rem;
   padding: 0.8rem 2rem;
   border-radius: 0.7rem;
-  background-color: hsl(var(--h2-color));
-} */
+  background-color: hsl(var(--h2-color)); */
+}
 
 .attribution {
   font-size: 11px;
   text-align: center;
+  margin-block: 2rem;
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 47rem) {
+  .component {
+    width: 90%;
+    flex-direction: column;
+    margin-top: 5rem;
+  }
+
+  .preview {
+    padding: 3rem 2.5rem 2rem 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .preview > p {
+    font-size: 1.6rem;
+  }
+
+  .personal {
+    margin-top: 1rem;
+  }
+
+  .profile {
+    gap: 1.8rem;
+  }
+
+  .dp {
+    width: 4rem;
+  }
+
+  .dp-cred p {
+    font-size: 1.6rem;
+  }
 }
