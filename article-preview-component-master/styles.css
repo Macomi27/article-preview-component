@@ -31,30 +31,38 @@ body {
   justify-content: center;
   border-radius: 1rem;
   margin-top: 15rem;
-  overflow: hidden;
-}
-
-img {
-  width: var(--img-width);
-  display: block;
-  max-width: 250px;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  object-position: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  /* overflow: hidden; */
 }
 
 .article-img {
   margin: 0;
   box-sizing: border-box;
+  width: 40%;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+img {
+  width: var(--img-width);
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
 }
 
 .preview {
+  width: 60%;
   box-sizing: border-box;
   margin: 0;
   padding: 1.5rem 2rem;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  position: relative;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
   background-color: hsl(var(--preview-background-color));
 }
 
@@ -107,15 +115,19 @@ h2 {
 
 .share-info {
   display: none;
-  /* position: absolute;
+}
+
+.shared {
+  display: flex;
+  position: absolute;
   bottom: 5rem;
   right: -7rem;
-  display: flex;
   align-items: center;
   gap: 1.2rem;
   padding: 1.2rem 2.2rem;
   border-radius: 0.7rem;
-  background-color: hsl(var(--h2-color)); */
+  background-color: hsl(var(--h2-color));
+  z-index: 100;
 }
 
 .share-info > p {
@@ -138,9 +150,8 @@ h2 {
   cursor: pointer;
 }
 
-.share-icon:hover .share-info {
-  display: block;
-  /* position: absolute;
+.share-icon:active .share-info {
+  position: absolute;
   bottom: 0;
   right: -3rem;
   display: flex;
@@ -148,7 +159,7 @@ h2 {
   gap: 1.2rem;
   padding: 0.8rem 2rem;
   border-radius: 0.7rem;
-  background-color: hsl(var(--h2-color)); */
+  background-color: hsl(var(--h2-color));
 }
 
 .attribution {
